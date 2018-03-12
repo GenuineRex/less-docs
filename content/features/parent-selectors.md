@@ -210,3 +210,36 @@ li + li {
   border-top: 0;
 }
 ```
+### Caution
+```css
+.item {
+   color: red;
+   
+   &-large {
+       font-size: 30px;
+   }
+}
+```
+looks like it should do this
+```css
+```css
+.item {
+    color: red;
+}
+
+.item-large {
+    color: red;
+    font-size: 30px;
+}
+```
+```
+but instead expands to this unexpected result
+```css
+.item {
+    color: red;
+}
+
+.item-large {
+    font-size: 30px;
+}
+```
